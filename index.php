@@ -12,6 +12,7 @@ session_start();
 //Require files
 require_once('vendor/autoload.php');
 require_once('model/data-layer.php');
+require_once('model/validate.php');
 
 //Create an instance of the Base class
 $f3 = Base::instance();
@@ -29,8 +30,34 @@ $f3->route('GET /', function() {
 });
 
 //Define a order route
-$f3->route('GET /order', function($f3) {
+$f3->route('GET|POST /order', function($f3) {
 
+    //Add data from form1 to session array
+    //var_dump($_POST);
+
+    //If the form has been submitted
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+        if(validFood($_POST['food'])){
+            $_SESSION['food'] = $_POST['food'];
+        }
+        else {
+            $f3->set('errors["food"]', "Food cannot be blank");
+        }
+        //var_dump($_POST);
+        if(isset($_POST['meal'])){
+            $_SESSION['meal'] = $_POST['meal'];
+        }
+
+        //If there are no errors, redirect to /order2
+        if(empty($f3->get('errors')))
+        {
+            $f3->reroute('/order2');
+        }
+    }
+
+
+    //var_dump($_POST);
     //$meals = getMeals();
     //var_dump($meals);
     $f3->set('meals', getMeals());
@@ -44,16 +71,6 @@ $f3->route('GET /order', function($f3) {
 $f3->route('POST /order2', function($f3) {
 
     $f3->set('condiments', getCondiments());
-
-    //Add data from form1 to session array
-    //var_dump($_POST);
-    if(isset($_POST['food'])){
-        $_SESSION['food'] = $_POST['food'];
-    }
-    //var_dump($_POST);
-    if(isset($_POST['meal'])){
-        $_SESSION['meal'] = $_POST['meal'];
-    }
 
     //display a view
     //echo "Order 2 Route";

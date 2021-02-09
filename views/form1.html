@@ -2,10 +2,13 @@
 <body>
     <div class="container">
     <h1>Food Order</h1>
-    <form method="post" action="order2">
+    <form method="post" action="#">
         <div class="form-group">
             <label>What would you like to order?
                 <input type="text" name="food">
+                <check if="{{ isset(@errors['food']) }}">
+                    {{ @errors['food'] }}
+                </check>
             </label>
         </div>
     <!-- get meal -->
