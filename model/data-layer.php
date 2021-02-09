@@ -7,5 +7,10 @@
 
 function getMeals()
 {
-    return array("Breakfast", "2nd Breakfast", "Lunch", "Dinner");
+    return array("breakfast", "2nd breakfast", "lunch", "dinner");
+}
+
+function getCondiments()
+{
+    return array("mayonnaise", "ketchup", "mustard", "sriracha");
 }

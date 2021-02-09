@@ -9,18 +9,11 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">Select condiments</label>
             <div class="col-sm-4">
+                <repeat group="{{ @condiments }}" value="{{ @condiment }}">
                     <label><input type="checkbox"
                                   name="conds[]"
-                                  value="mayonnaise"> Mayonnaise</label><br>
-                    <label><input type="checkbox"
-                                  name="conds[]"
-                                  value="ketchup"> Ketchup</label><br>
-                    <label><input type="checkbox"
-                                  name="conds[]"
-                                  value="mustard"> Mustard</label><br>
-                    <label><input type="checkbox"
-                                  name="conds[]"
-                                  value="sriracha"> Sriracha</label><br>
+                                  value="{{ @condiment }}"> {{ ucfirst(@condiment) }}</label><br>
+                </repeat>
             </div>
         </div>
 

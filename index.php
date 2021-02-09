@@ -41,7 +41,9 @@ $f3->route('GET /order', function($f3) {
 });
 
 //Define an order2 route
-$f3->route('POST /order2', function() {
+$f3->route('POST /order2', function($f3) {
+
+    $f3->set('condiments', getCondiments());
 
     //Add data from form1 to session array
     //var_dump($_POST);
