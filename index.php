@@ -9,8 +9,9 @@ error_reporting(E_ALL);
 //Start a session
 session_start();
 
-//Require the autoload file
+//Require files
 require_once('vendor/autoload.php');
+require_once('model/data-layer.php');
 
 //Create an instance of the Base class
 $f3 = Base::instance();
@@ -28,7 +29,12 @@ $f3->route('GET /', function() {
 });
 
 //Define a order route
-$f3->route('GET /order', function() {
+$f3->route('GET /order', function($f3) {
+
+    //$meals = getMeals();
+    //var_dump($meals);
+    $f3->set('meals', getMeals());
+
     //echo "Order Route";
     $view = new Template();
     echo $view->render('views/form1.html');
