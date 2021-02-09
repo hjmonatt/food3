@@ -1,0 +1,12 @@
+{
+  "name": "hmonattg/328/food3",
+  "authors": [
+    {
+      "name": "Heather Monatt",
+      "email": "hmonatt@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}

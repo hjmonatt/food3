@@ -1,0 +1,36 @@
+<include href="views/header.html"></include>
+<body>
+    <div class="container">
+    <h1>Food Order</h1>
+    <form method="post" action="order2">
+        <div class="form-group">
+            <label>What would you like to order?
+                <input type="text" name="food">
+            </label>
+        </div>
+    <!-- get meal -->
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Select a meal</label>
+        <div class="col-sm-4">
+            <label><input type="radio"
+                          name="meal"
+                          id="breakfast"
+                          value="breakfast"> Breakfast
+                </input></label><br>
+            <label><input type="radio"
+                          name="meal"
+                          id="lunch"
+                          value="lunch"> Lunch
+                </input></label><br>
+            <label><input type="radio"
+                          name="meal"
+                          id="dinner"
+                          value="dinner"> Dinner
+                </input></label><br>
+        </div>
+    </div>
+        <input type="submit" value="Next >>">
+    </form>
+    </div>
+</body>
+</html>
