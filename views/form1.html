@@ -5,7 +5,7 @@
     <form method="post" action="#">
         <div class="form-group">
             <label>What would you like to order?
-                <input type="text" name="food">
+                <input type="text" name="food" value="{{ @userFood }}">
                 <check if="{{ isset(@errors['food']) }}">
                     {{ @errors['food'] }}
                 </check>
