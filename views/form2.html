@@ -3,9 +3,10 @@
 <div class="container">
     <h1>Food Order, Continued</h1>
 
-    <form action="summary" method="post" class="form-horizontal">
+    <form action="#" method="post" class="form-horizontal">
 
         <!-- get condiments -->
+        <check if="{{ @errors['conds'] }}"><span>{{ @errors['conds'] }}</span></check>
         <div class="form-group">
             <label class="col-sm-2 control-label">Select condiments</label>
             <div class="col-sm-4">

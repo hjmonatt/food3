@@ -20,9 +20,14 @@
                 <label><input type="radio"
                               name="meal"
                               id="{{ @meal }}"
-                              value="{{ @meal }}"> {{ ucfirst(@meal) }}
+                              value="{{ @meal }}"
+                              <check if="{{ @meal == @userMeal }}">checked</check>
+                    > {{ ucfirst(@meal) }}
                     </input></label><br>
             </repeat>
+            <check if="{{ isset(@errors['meal']) }}">
+                {{ @errors['meal'] }}
+            </check>
 
         </div>
     </div>

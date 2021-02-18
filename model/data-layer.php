@@ -5,14 +5,22 @@
  *
  */
 
-function getMeals()
+class DataLayer
 {
-    return array("breakfast", "2nd breakfast", "lunch", "dinner");
+    /**
+     * getMeals() returns an array of meals
+     * @return string[]
+     */
+    function getMeals()
+    {
+        return array("breakfast", "2nd breakfast", "lunch", "dinner");
+    }
+
+    function getCondiments()
+    {
+        return array("mayonnaise", "ketchup", "mustard", "sriracha");
+    }
 }
 
-function getCondiments()
-{
-    return array("mayonnaise", "ketchup", "mustard", "sriracha");
-}
 
 
